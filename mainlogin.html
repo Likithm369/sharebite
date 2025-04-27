@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | ShareBite</title>
+  <style>
+    /* Overall Page Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2f3d4c;
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #1d2b64;
+      box-shadow: 0 0 8px rgba(29, 43, 100, 0.6);
+    }
+
+    .login-btn {
+      background: #2f3d4c;
+      color: white;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #1d2b64;
+    }
+
+    .login-btn:active {
+      background: #132142;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 15px;
+      font-size: 14px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login to ShareBite</h2>
+    <form id="loginForm">
+      <div class="input-group">
+        <input type="text" id="uid" placeholder="Username" required>
+      </div>
+      <div class="input-group">
+        <input type="password" id="passwd" placeholder="Password" required>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <p class="error-message" id="errorMessage">Incorrect Username or Password</p>
+    </form>
+  </div>
+
+  <script>
+    // Login form validation
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('uid').value;
+      const password = document.getElementById('passwd').value;
+
+      // Check if username and password are both 'donate'
+      if (username === 'donate' && password === 'donate') {
+        // Redirect to index.html
+        window.location.href = 'index.html';
+      } else {
+        // Show error message if credentials are wrong
+        document.getElementById('errorMessage').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

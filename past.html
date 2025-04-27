@@ -1,0 +1,99 @@
+<!-- past.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Past Donations | ShareBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffef0;
+      padding: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 100px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 14px;
+      text-align: left;
+    }
+    th {
+      background-color: #1f4037;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      background-color: #1f4037;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #ffffff33;
+      color: #ffdf91;
+    }
+  </style>
+</head>
+
+<body>
+
+ <!-- ✅ Navbar -->
+ <nav class="navbar">
+    <div class="logo">🍽️ ShareBite</div>
+    <div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="view.html" class="nav-link">Need Food</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <h2 style="margin-top: 60px;">Your Past Donations / Received Food</h2>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Type of Food</th>
+      <th>Quantity</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>2025-04-07</td>
+      <td>Rice & Dal</td>
+      <td>5 kg</td>
+      <td>Delivered</td>
+    </tr>
+    <tr>
+      <td>2025-04-05</td>
+      <td>Bread Loaf</td>
+      <td>10 pcs</td>
+      <td>Received</td>
+    </tr>
+    <!-- More rows dynamically in future -->
+  </table>
+
+</body>
+</html>

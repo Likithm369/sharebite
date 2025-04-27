@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShareBite | Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f8fff8, #d2f0d2);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      background-color: #1f4037;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background-color: #ffffff33;
+      color: #ffdf91;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #1f4037;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #1f4037;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-group button:hover {
+      background-color: #2e594d;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">🍽️ ShareBite</div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="view.html" class="nav-link">View Food</a>
+      <a href="past.html" class="nav-link">Past</a>
+      <a href="available.html" class="nav-link">Available</a>
+      <a href="login.html" class="nav-link">Login</a>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="signupUsername">Username</label>
+        <input type="text" id="signupUsername" name="signupUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="signupEmail">Email</label>
+        <input type="email" id="signupEmail" name="signupEmail" required>
+      </div>
+      <div class="form-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" name="signupPassword" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Signed up successfully!');
+    });
+  </script>
+
+</body>
+</html>

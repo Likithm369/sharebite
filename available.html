@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Available Food | ShareBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e6ffe6;
+      padding: 40px;
+    }
+
+    .available-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: move; /* Shows that the item is draggable */
+    }
+
+    .item h3 {
+      color: #1f4037;
+    }
+
+    .item p {
+      margin: 6px 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      background-color: #1f4037;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #ffffff33;
+      color: #ffdf91;
+    }
+
+    /* New section for Expiring in 6 Months */
+    .expiring-soon {
+      background-color: #f4f4f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .expiring-soon h3 {
+      color: #ff6f61;
+    }
+
+    .expiring-soon .item {
+      background-color: #ffebcd;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <div class="logo">🍽️ ShareBite</div>
+    <div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="donate.html" class="nav-link">Donate</a>
+      <a href="view.html" class="nav-link">Need Food</a>
+      <a href="about.html" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <h2 style="margin-bottom: 20px;">Available Food Near You</h2>
+
+  <!-- Available Food List -->
+  <div class="available-list" id="availableList">
+    <div class="item" id="item1" draggable="true">
+      <h3>Vegetable Curry</h3>
+      <p>Quantity: 3 kg</p>
+      <p>Expires: 2025-04-10</p>
+      <p>Contact: +91-9876543210</p>
+    </div>
+    <div class="item" id="item2" draggable="true">
+      <h3>Chapati (Pack of 10)</h3>
+      <p>Quantity: 5 packs</p>
+      <p>Expires: 2025-04-09</p>
+      <p>Contact: +91-9123456780</p>
+    </div>
+  </div>
+
+  <!-- Section for Expiring in 6 Months -->
+  <div class="expiring-soon" id="expiringSoon" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h3>Expiring in 6 Months</h3>
+    <div id="expiringItems"></div>
+  </div>
+
+  <script>
+    // Allow drag over event to enable dropping
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    // Handle dropping of food items into the "Expiring in 6 Months" section
+    function drop(event) {
+      event.preventDefault();
+      var data = event.dataTransfer.getData("text");
+      var draggedItem = document.getElementById(data);
+      
+      // Check the expiration date of the dragged item
+      var expiryDate = draggedItem.querySelector("p:nth-child(3)").textContent.split(": ")[1];
+      var expiryDateObj = new Date(expiryDate);
+      var currentDate = new Date();
+      var sixMonthsLater = new Date();
+      sixMonthsLater.setMonth(currentDate.getMonth() + 6);
+      
+      // If item expires within 6 months, allow it to be dropped
+      if (expiryDateObj <= sixMonthsLater) {
+        document.getElementById("expiringItems").appendChild(draggedItem);
+      } else {
+        alert("This item is not expiring within 6 months.");
+      }
+    }
+
+    // Add event listeners to make items draggable
+    var items = document.querySelectorAll('.item');
+    items.forEach(function(item) {
+      item.addEventListener('dragstart', function(event) {
+        event.dataTransfer.setData("text", event.target.id);
+      });
+    });
+  </script>
+
+</body>
+</html>

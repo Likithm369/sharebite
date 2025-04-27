@@ -1,0 +1,102 @@
+<!-- view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Food | ShareBite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0fff0;
+      padding: 20px;
+    }
+    .form-card {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .form-card h2 {
+      margin-bottom: 20px;
+      color: #1f4037;
+    }
+    .form-card input, .form-card textarea, .form-card select {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .form-card button {
+      background: #1f4037;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .form-card button:hover {
+      background: #2b614e;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      background-color: #1f4037;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #ffffff33;
+      color: #ffdf91;
+    }
+  </style>
+</head>
+ <!-- ✅ Navbar -->
+ <nav class="navbar">
+  <div class="logo">🍽️ ShareBite</div>
+  <div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="donate.html" class="nav-link">Donate</a>
+    <a href="view.html" class="nav-link">Need Food</a>
+    <a href="about.html" class="nav-link">About</a>
+  </div>
+</nav>
+<body>
+
+  <!-- Include same navbar from index.html -->
+  <!-- You can copy the nav HTML from index.html above here -->
+
+  <div class="form-card">
+    <h2>Request Food</h2>
+    <input type="text" placeholder="Full Name" required />
+    <input type="number" placeholder="Quantity Needed (kg or items)" required />
+    <textarea placeholder="Why do you need food? (Brief Reason)" required></textarea>
+    <input type="text" placeholder="Your Address" required />
+    <input type="tel" placeholder="Contact Number" required />
+    <button>Submit Request</button>
+  </div>
+
+</body>
+</html>

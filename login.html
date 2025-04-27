@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | ShareBite</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #c9d6ff);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 30px;
+      background-color: #1f4037;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #ffffff33;
+      color: #ffdf91;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+      margin: 80px auto;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      color: #1f4037;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #1f4037;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #335c4c;
+    }
+
+    .form-container p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .form-container a {
+      color: #1f4037;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .forgot-password {
+      float: right;
+      font-size: 13px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">🍽️ ShareBite</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="donate.html">Donate</a>
+      <a href="view.html">Need Food</a>
+      <a href="available.html">Available Food</a>
+      <a href="past.html">Past Donations</a>
+      <a href="signup.html">Signup</a>
+      <a href="login.html" class="active">Login</a>
+    </div>
+  </nav>
+
+  <!-- Login Form -->
+  <div class="form-container">
+    <h2>Login to ShareBite</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="signup.html">Create an Account</a></p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Logged in successfully!');
+    });
+  </script>
+
+</body>
+</html>
